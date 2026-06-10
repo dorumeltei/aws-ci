@@ -8,10 +8,10 @@ jobs:
         node_version: [18.x]
     steps:
       - uses: actions/checkout@v4
-      - name: Use Node.js $
+      - name: Use Node.js ${{ matrix.node_version }}
         uses: actions/setup-node@v4
         with:
-          node-version: $
+          node-version: ${{ matrix.node_version }}
       - run: npm install
       - run: npm run build --if-present
       - run: npm test
